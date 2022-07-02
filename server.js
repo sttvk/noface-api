@@ -34,10 +34,6 @@ app.post("/signin", (req, res) => {
 // Register
 app.post("/register", (req, res) => {
   register.handleRegister(req, res, db, bcrypt);
-  res.set({
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-  });
 });
 
 // Profile
