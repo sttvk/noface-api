@@ -12,9 +12,7 @@ const db = knex({
   client: "pg",
   connection: {
     connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false,
-    },
+    ssl: true,
   },
 });
 
@@ -26,6 +24,11 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Success");
+  res.set({
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Credentials": true,
+  });
 });
 
 // Sign In
