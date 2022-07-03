@@ -31,7 +31,7 @@ app.post("/signin", (req, res) => {
 
 // Register
 app.post("/register", (req, res) => {
-  register.handleRegister(db, bcrypt);
+  register.handleRegister(req, res, db, bcrypt);
 });
 
 // Profile
