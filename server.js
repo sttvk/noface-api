@@ -2,7 +2,6 @@ const express = require("express");
 const bcrypt = require("bcrypt-nodejs");
 const cors = require("cors");
 const knex = require("knex");
-const { Db } = require("pg");
 
 const register = require("./controllers/register");
 const signin = require("./controllers/signin");
@@ -18,8 +17,6 @@ const db = knex({
     },
   },
 });
-
-db.connect();
 
 const app = express();
 app.use(express.json());
